@@ -245,7 +245,7 @@ rule_data = [
 
 # --------------------------------------------------------------------------
 
-# If sub_data has 's' as key, returns the value; else returns
+# If who_data has 's' as key, returns the value; else returns
 # the original 's' provided to the function.  
 who = (s) -> who_data[s] or s 
 
