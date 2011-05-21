@@ -1,4 +1,4 @@
-# This is a small, imperfect script for http://en.wikipedia.org/wiki/ELIZA
+# This is a small script for http://en.wikipedia.org/wiki/ELIZA
 #
 # Copyright 2011, Adrian Nackov
 # BSD licence (3 clause): http://www.opensource.org/licenses/bsd-license.php
