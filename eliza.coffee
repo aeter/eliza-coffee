@@ -1,4 +1,4 @@
-# This is a small script for http://en.wikipedia.org/wiki/ELIZA
+# A Coffeescript version of http://en.wikipedia.org/wiki/ELIZA
 #
 # Copyright 2011, Adrian Nackov
 # BSD licence (3 clause): http://www.opensource.org/licenses/bsd-license.php
@@ -249,13 +249,13 @@ rule_data = [
 # the original 's' provided to the function.  
 who = (s) -> who_data[s] or s 
 
-# returns a random element from a list
+# Returns a random element from a list
 rand_elem = (_array) -> _array[Math.floor(Math.random() * _array.length)]
 
-# creates a RegExp object from a rule_data question
+# Creates a RegExp object from a rule_data question/pattern (first column)
 re = (pattern) -> new RegExp pattern.replace("*", "(.*)")
 
-# chooses an answer and a possible string for replacing the '_' answer part
+# Chooses an answer and a possible string for replacing the '_' part
 # The function receives the user's words as 's'
 _answer_data = (s) -> 
   for index,[patterns,answers] of rule_data 
@@ -267,9 +267,9 @@ _answer_data = (s) ->
         return [answer, addon_words]
 
 prepare_answer = (answer, addon_words) ->
-  # replace the 'them','me' stuff in by_user words, so that it sounds authentic
-  per_eliza = (who(_) for _ in addon_words.split(/\W+/)).join(' ')
-  if '_' in answer
+  if '_' in answer 
+    # replace the pronouns, so that it sounds authentic:
+    per_eliza = (who(_) for _ in addon_words.split(/\W+/)).join(' ')
     answer.replace('_', per_eliza)
   else
     answer
