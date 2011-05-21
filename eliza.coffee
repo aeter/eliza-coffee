@@ -274,7 +274,7 @@ prepare_answer = (answer, addon_words) ->
   else
     answer
 
-# a wrapper (main?) function, which can be called from outer modules
+# a wrapper (main?) function
 eliza = (user_words) ->
   data = _answer_data user_words
   prepare_answer data[0], data[1]
