@@ -9,26 +9,29 @@
     <style type="text/css" media="screen">
         body {
             font-family: Times;
-            font-size: 200%;
             background: #033649;
         }
         table#conversation {
             color: #CDB380;
             margin: 0 auto;
         }
+        table thead {
+            font-size: 200%;
+        }
+        table tbody {
+            font-size: 150%;
+        }
         tr.even {
             font-style: bold;
+            color: 
         }
         a:link {color: #E8DDCB;}
         a:visited {color: #E8DDCB;}
         a:active {text-decoration: none; color:#E8DDCB;}
         a:hover {text-decoration: underline; color: #031634;}
-        thead {
-            border-bottom: 5px dotted white;
-        }
         textarea#user_input {
             width: 100%; 
-            height: 120px; 
+            height: 60px; 
             border: 3px solid #cccccc; 
             padding: 5px; 
             font-family: Tahoma, sans-serif;
@@ -43,30 +46,64 @@
         }
         tbody {
             height: 100%;
-            overflow: auto;
         }
+        #content {
+            overflow: auto;
+            height: 200px;
+        }
+        .ribbon {
+            background-color: black;
+            overflow: hidden;
+        }
+        .ribbon a {
+            border: 1px solid #036564; 
+            background-color: white;
+            color: black;
+            display: block;
+            font: bold 81.25% 'Helvetiva Neue', Helvetica, Arial, sans-serif;
+            margin: 0.05em 0;
+            padding: 0.5em 3.5em;
+            text-align: center;
+            text-decoration: none;
+            position: absolute;
+            left: -3em;
+            top: 2.5em;
+            -moz-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
     </style>
   </head>
   <body>
+    <div class="ribbon">
+      <a href="#" rel="eliza-coffee">Fork it on GitHub</a>
+    </div>
+
+    <div id="wrapper">
+        <div id="header">
+
+        </div>
+    </div>
+
     <table id="conversation">
       <thead>
         <tr><th>CoffeeScript version of the <a href="http://en.wikipedia.org/wiki/ELIZA">Eliza</a> program</th>
-        <tr><td><a href="https://github.com/aeter/eliza-coffee/">Source code on github</a></td></tr>
       </thead>
       <tbody>
-
-      <div style="background : #036564; color
-          : #ffffff; padding : 4px; width : 200px; height : 100px; overflow :
-          auto; "> 
+        <tr>
+          <td>
+            <div id="content">
+                <span class="even">>>Hi there<br></span>
+                <span class="odd">>> _<br></span>
+            </div>
+          </td>
         </tr>
-        <tr class="even"><td>LIZ>> Hi there<td></tr>
         <tr>
           <td><textarea id="user_input">Talk to the ELIZA program</textarea></td> 
         </tr>
         <tr> 
           <td><input type="button" id="say" value="Say"></input></td> 
         </tr>
-    </div>
       </tbody>
     </table>
   </body>
