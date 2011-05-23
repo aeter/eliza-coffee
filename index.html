@@ -2,10 +2,10 @@
 <html>
   <head>
     <title>ELIZA in CoffeeScript</title>
+    <script src="coffee-script.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script src="coffee-script.js"></script>
-    <script src="eliza.coffee"></script>
-    <script src="conversation.coffee"></script>
+    <script src="eliza.coffee" type="text/coffeescript"></script>
+    <script src="conversation.coffee" type="text/coffeescript"></script>
     <style type="text/css" media="screen">
       body {
         font-family: Times;
@@ -23,7 +23,7 @@
       a:visited {color: #E8DDCB;}
       a:active {text-decoration: none; color:#E8DDCB;}
       a:hover {text-decoration: underline; color: #031634;}
-      input.buttons {
+      input {
         display: block;
         width: 30%;
         height: 30%;
@@ -79,12 +79,12 @@
 
       <div id="conversation">
         <textarea id="user_input">Talk to the ELIZA program</textarea> 
-        <input type="button" value="Say" class="buttons"></input> 
-        <input type="button" value="Clear box" class="buttons"></input>
+        <input type="button" value="Say" id="say" title="Ctrl+Enter"></input>
+        <input type="button" value="Clear box" id="clear" ></input>
 
         <div id="content">
-          <span class="even">>> Hi there!<br></span>
-          <span class="odd">>> <br></span>
+            <span class="even">>> Hi there!</span><br>
+          <span class="odd">>> </span><br>
         </div>
       </div>
     </div>

@@ -275,6 +275,18 @@ prepare_answer = (answer, addon_words) ->
     answer
 
 # a wrapper (main?) function
-eliza = (user_words) ->
+respond_to = (user_words) ->
   data = _answer_data user_words
   prepare_answer data[0], data[1]
+
+# taken from the CoffeeScript FAQ:
+# https://github.com/jashkenas/coffee-script/wiki/FAQ
+namespace = (target, name, block) ->
+  [target, name, block] = [(if typeof exports isnt 'undefined' then exports else window), arguments...] if arguments.length < 3
+  top    = target
+  target = target[item] or= {} for item in name.split '.'
+  block target, top
+
+namespace "eliza", (exports) ->
+  exports.respond_to = respond_to
+
