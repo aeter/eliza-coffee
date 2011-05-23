@@ -1,1 +1,4 @@
 A Coffeescript version of the ELIZA (http://en.wikipedia.org/wiki/ELIZA) program. 
+
+Demo available at https://aeter.github.com/eliza-coffee/ (as a github project
+page; works best with Mozilla Firefox)
