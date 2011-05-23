@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <title>ELIZA in CoffeeScript</title>
+    <script src="coffee-script.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="eliza.coffee" type="text/coffeescript"></script>
+    <script src="conversation.coffee" type="text/coffeescript"></script>
+    <style type="text/css" media="screen">
+      body {
+        font-family: Times;
+        background: #033649;
+      }
+      div#wrapper {
+        width: 600px;
+        margin: 0 auto;
+        color: #CDB380;
+      }
+      div#header h3 {
+        font-size: 200%;
+      }
+      a:link {color: #E8DDCB;}
+      a:visited {color: #E8DDCB;}
+      a:active {text-decoration: none; color:#E8DDCB;}
+      a:hover {text-decoration: underline; color: #031634;}
+      input {
+        display: block;
+        width: 30%;
+        height: 30%;
+        color: #031634;
+        text-decoration: none;
+      }
+      textarea#user_input {
+        width: 66%; 
+        height: 60px; 
+        border: 3px solid #cccccc; 
+        padding: 5px; 
+        font-family: Tahoma, sans-serif;
+        font-size: 66%;
+      }
+      #content {
+        overflow: auto;
+        margin-top: 10px;
+        height: 250px;
+        font-size: 150%;
+        font-style: bold;
+      }
+      .ribbon {
+        background-color: black;
+        overflow: hidden;
+      }
+      .ribbon a {
+        border: 1px solid #036564; 
+        background-color: white;
+        color: black;
+        display: block;
+        font: bold 81.25% 'Helvetiva Neue', Helvetica, Arial, sans-serif;
+        margin: 0.05em 0;
+        padding: 0.5em 3.5em;
+        text-align: center;
+        text-decoration: none;
+        position: absolute;
+        left: -3em;
+        top: 2.5em;
+        -moz-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ribbon">
+      <a href="http://github.com/aeter" rel="eliza-coffee">Fork it on GitHub</a>
+    </div>
+
+    <div id="wrapper">
+      <div id="header">
+        <h3>CoffeeScript version of the <a href="http://en.wikipedia.org/wiki/ELIZA">Eliza</a> program</h3>
+      </div>
+
+      <div id="conversation">
+        <textarea id="user_input">Talk to the ELIZA program</textarea> 
+        <input type="button" value="Say" id="say" title="Ctrl+Enter"></input>
+        <input type="button" value="Clear box" id="clear" ></input>
+
+        <div id="content">
+          <span class="even">>> Hi there!</span><br>
+          <span class="odd">>> </span><br>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
