@@ -7,71 +7,64 @@
     <script src="eliza.coffee"></script>
     <script src="conversation.coffee"></script>
     <style type="text/css" media="screen">
-        body {
-            font-family: Times;
-            background: #033649;
-        }
-        table#conversation {
-            color: #CDB380;
-            margin: 0 auto;
-        }
-        table thead {
-            font-size: 200%;
-        }
-        table tbody {
-            font-size: 150%;
-        }
-        tr.even {
-            font-style: bold;
-            color: 
-        }
-        a:link {color: #E8DDCB;}
-        a:visited {color: #E8DDCB;}
-        a:active {text-decoration: none; color:#E8DDCB;}
-        a:hover {text-decoration: underline; color: #031634;}
-        textarea#user_input {
-            width: 100%; 
-            height: 60px; 
-            border: 3px solid #cccccc; 
-            padding: 5px; 
-            font-family: Tahoma, sans-serif;
-            font-size: 60%;
-        }
-        input#say {
-            display: block;
-            width: 25%;
-            height: 30%;
-            color: #031634;
-            text-decoration: none;
-        }
-        tbody {
-            height: 100%;
-        }
-        #content {
-            overflow: auto;
-            height: 200px;
-        }
-        .ribbon {
-            background-color: black;
-            overflow: hidden;
-        }
-        .ribbon a {
-            border: 1px solid #036564; 
-            background-color: white;
-            color: black;
-            display: block;
-            font: bold 81.25% 'Helvetiva Neue', Helvetica, Arial, sans-serif;
-            margin: 0.05em 0;
-            padding: 0.5em 3.5em;
-            text-align: center;
-            text-decoration: none;
-            position: absolute;
-            left: -3em;
-            top: 2.5em;
-            -moz-transform: rotate(-45deg);
-            -webkit-transform: rotate(-45deg);
-        }
-
+      body {
+        font-family: Times;
+        background: #033649;
+      }
+      div#wrapper {
+        width: 600px;
+        margin: 0 auto;
+        color: #CDB380;
+      }
+      div#header h3 {
+        font-size: 200%;
+      }
+      a:link {color: #E8DDCB;}
+      a:visited {color: #E8DDCB;}
+      a:active {text-decoration: none; color:#E8DDCB;}
+      a:hover {text-decoration: underline; color: #031634;}
+      input.buttons {
+        display: block;
+        width: 30%;
+        height: 30%;
+        color: #031634;
+        text-decoration: none;
+      }
+      textarea#user_input {
+        width: 66%; 
+        height: 60px; 
+        border: 3px solid #cccccc; 
+        padding: 5px; 
+        font-family: Tahoma, sans-serif;
+        font-size: 66%;
+      }
+      #content {
+        overflow: auto;
+        margin-top: 10px;
+        height: 250px;
+        font-size: 150%;
+        font-style: bold;
+      }
+      .ribbon {
+        background-color: black;
+        overflow: hidden;
+      }
+      .ribbon a {
+        border: 1px solid #036564; 
+        background-color: white;
+        color: black;
+        display: block;
+        font: bold 81.25% 'Helvetiva Neue', Helvetica, Arial, sans-serif;
+        margin: 0.05em 0;
+        padding: 0.5em 3.5em;
+        text-align: center;
+        text-decoration: none;
+        position: absolute;
+        left: -3em;
+        top: 2.5em;
+        -moz-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
     </style>
   </head>
   <body>
@@ -80,32 +73,21 @@
     </div>
 
     <div id="wrapper">
-        <div id="header">
+      <div id="header">
+        <h3>CoffeeScript version of the <a href="http://en.wikipedia.org/wiki/ELIZA">Eliza</a> program</h3>
+      </div>
 
+      <div id="conversation">
+        <textarea id="user_input">Talk to the ELIZA program</textarea> 
+        <input type="button" value="Say" class="buttons"></input> 
+        <input type="button" value="Clear box" class="buttons"></input>
+
+        <div id="content">
+          <span class="even">>> Hi there!<br></span>
+          <span class="odd">>> <br></span>
         </div>
+      </div>
     </div>
-
-    <table id="conversation">
-      <thead>
-        <tr><th>CoffeeScript version of the <a href="http://en.wikipedia.org/wiki/ELIZA">Eliza</a> program</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div id="content">
-                <span class="even">>>Hi there<br></span>
-                <span class="odd">>> _<br></span>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><textarea id="user_input">Talk to the ELIZA program</textarea></td> 
-        </tr>
-        <tr> 
-          <td><input type="button" id="say" value="Say"></input></td> 
-        </tr>
-      </tbody>
-    </table>
   </body>
 </html>
 
