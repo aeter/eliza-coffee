@@ -1,7 +1,8 @@
 # A Coffeescript version of http://en.wikipedia.org/wiki/ELIZA
 #
 # Copyright 2011, Adrian Nackov
-# BSD licence (3 clause): http://www.opensource.org/licenses/bsd-license.php
+# Released under BSD licence (3 clause): 
+# http://www.opensource.org/licenses/bsd-license.php
 #
 # Credit to https://github.com/almost/Haskell-Fun/blob/master/eliza.hs
 # for the Haskell version which I looked at when writing this one.
