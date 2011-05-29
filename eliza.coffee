@@ -5,7 +5,7 @@
 # http://www.opensource.org/licenses/bsd-license.php
 #
 # Credit to https://github.com/almost/Haskell-Fun/blob/master/eliza.hs
-# for the Haskell version which I looked at when writing this one.
+# for the Haskell version which I looked at when writing this one
 
 who_data = 
   "i"        : "you"
